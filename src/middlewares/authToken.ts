@@ -10,7 +10,7 @@ export interface AuthRequest extends Request {
     user? : any; 
 }
 
-const authToken = async(req:AuthRequest, res: Response, next: NextFunction) => {
+export const authToken = async(req:AuthRequest, res: Response, next: NextFunction) => {
 
     const authHeader = req.headers.authorization; 
 
@@ -27,10 +27,12 @@ const authToken = async(req:AuthRequest, res: Response, next: NextFunction) => {
         req.user = verified; 
         next() ; 
         res.status(200).json({
-            message: 'user access'
+            message: 'user access successful'
         })
     }
     catch(error){
-        
+        return res.status(500).json({
+            message: 'something went wrong',
+        }); 
     }
 }
