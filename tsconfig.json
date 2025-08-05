@@ -1,0 +1,14 @@
+{
+ "compilerOptions": {
+   "target": "ES2020",
+   "module": "CommonJS",
+   "rootDir": "./src",
+   "outDir": "./dist",
+   "strict": true,
+   "esModuleInterop": true,
+   "forceConsistentCasingInFileNames": true, 
+    "types": ["jest"]
+ }, 
+  "include": ["src/**/*.ts", "tests/**/*.ts", "node_modules/jest.config.js"],
+  "exclude": ["node_modules", "dist"]
+}
